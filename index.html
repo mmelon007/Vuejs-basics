@@ -3,12 +3,22 @@
     <head>
         <meta charset="utf-8">
         <title>VueJS Tutorials</title>
-        <link href="styles.css" rel="stylesheet" />
-        <script src="https://unpkg.com/vue"></script>
+        <link href="style.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     </head>
     <body>
         <div id="vue-app">
+            <h1>Events</h1>
+            <!--使用v-on监听事件,传递参数-->
+            <button v-on:click="add(1)">+1 year</button>
+            <button v-on:click="substract(1)">-1 year</button>
+            <button v-on:dblclick="add(10)">+10 year</button>
+            <button v-on:dblclick="substract(10)">-10 year</button>
+            <p>my age is {{ age }}</p>
             
+            <div id="canvas" v-on:mousemove="updateXY">
+                {{x}},{{y}}
+            </div>
         </div>
     </body>
 
