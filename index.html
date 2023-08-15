@@ -8,17 +8,17 @@
     </head>
     <body>
         <div id="vue-app">
-            <h1>Dynamic CSS</h1>
-            <h2>example1</h2>
-            <!-- <div v-on:click="available = !available" v-bind:class="{available:available}">
-                <span>Ryu</span>
-            </div> -->
-            <h2>example2</h2>
-            <button v-on:click="nearby = !nearby">nearby</button>
-            <button v-on:click="available = !available">available</button>
-            <div v-bind:class="compClasses">
-                <span>Ryu</span>
-            </div>
+            <h1> Conditionals </h1>
+            <button v-on:click="error = !error">err</button>
+            <button v-on:click="success = !success">success</button>
+
+            <!-- <p v-if="error">error</p>
+            <p v-else-if="success">success</p> -->
+
+            <!--vshow相对于v-if 在unshow的时候 只是给element加上了特性 display none
+            没有改变dom，但是v-if改变了dom-->
+            <p v-show="error">error</p>
+            <p v-show="success">success</p>
 
         </div>
     </body>
