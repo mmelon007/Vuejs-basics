@@ -9,8 +9,8 @@
     <body>
         <div id="vue-app">
             <h1>Events</h1>
-            <!--使用v-on监听事件,传递参数-->
-            <button v-on:click="add(1)">+1 year</button>
+            <!-- Event Modifiers, v-on:click.once 只监听一次-->
+            <button v-on:click.once="add(1)">+1 year</button>
             <button v-on:click="substract(1)">-1 year</button>
             <button v-on:dblclick="add(10)">+10 year</button>
             <button v-on:dblclick="substract(10)">-10 year</button>
@@ -19,6 +19,10 @@
             <div id="canvas" v-on:mousemove="updateXY">
                 {{x}},{{y}}
             </div>
+
+            <!--使用v-on:click.prevent屏蔽元素默认行为-->
+            <!--还有其他的modifer https://v2.cn.vuejs.org/v2/guide/events.html -->
+            <a v-on:click.prevent="click" href="http://www.baidu.com">baidu page</a>
         </div>
     </body>
 
