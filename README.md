@@ -1,1 +1,1 @@
-# Vuejs-basics
+# Vuejs-basic

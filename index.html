@@ -7,25 +7,19 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
     </head>
     <body>
-        <div id="vue-app">
-            <h1> Looping with v-for </h1>
-            <ul>
-                <li v-for="(character, index) in characters" >{{index + 1}}.{{ character }}</li>
-            </ul>
-            <ul>
-                <li v-for="(ninja, index) in ninjas" >{{index + 1}}.{{ ninja.name }} - {{ ninja.age }}</li>
-            </ul>
-            <template v-for="(ninja, index) in ninjas" >
-                <h3>{{index + 1}}.{{ ninja.name }}</h3>
-                <p>{{ ninja.age }}</p>
-            </template >
+        <div id="vue-app-one">
+            <h1> Multiple Vue Instances </h1>
+            <h2>{{title}}</h2>
+            <h3>{{greets}}</h3>
+            
 
-            <!--在取对象时，使用二元组 先返回val再返回key，记住反的就行-->
-            <template v-for="ninja in ninjas" >
-                <div v-for="(val, key) in ninja">
-                    <p>{{key}} - {{val}}</p>
-                </div>
-            </template >
+        </div>
+
+        <div id="vue-app-two">
+            <h1> Multiple Vue Instances </h1>
+            <h2>{{title}}</h2>
+            <h3>{{greets}}</h3>
+            <button v-on:click="changeTitle">change app one title</button>            
 
         </div>
     </body>
