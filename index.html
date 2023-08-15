@@ -9,8 +9,16 @@
     <body>
         <div id="vue-app">
             <h1>{{ greet('afternoon') }}</h1>
+            <!--use v-bind:attributename to bind the v-data to a element's attribute-->
+            <a v-bind:href="website" >the Baidu page</a>
+            <br/>
+            <input type="text" v-bind:value="name">
             <p>Name: {{name}}</p>
             <p>Job: {{job}}</p>
+            <!--这样使用会当做文本输出-->
+            {{websiteTag}}
+            <!--使用v-html输出html模板标签-->
+            <p v-html="websiteTag"></p>
         </div>
         <script src="app.js"></script>
     </body>
