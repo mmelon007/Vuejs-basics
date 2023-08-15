@@ -1,19 +1,28 @@
+let data = {
+    name: 'melon'
+}
 
-new Vue({
-    el: '#vue-app',
-    data: {
-        characters: ['Mario', 'Luigi', 'Yoshi', 'Bowser'],
-        ninjas: [
-            { name: 'Ryu', age: 25 },
-            { name: 'Yoshi', age: 35 },
-            { name: 'Ken', age: 55 }
-        ]
+Vue.component('greeting', {
+    template: '<p>!!Component {{name}}!!<button v-on:click="changeName">ChangeName</button></p>',
+    data: function(){
+        // return data;
+        return {
+            name: 'melon'
+        }
     },
     methods: {
-        
-
+        changeName: function() {
+            this.name = 'mmmelon';
+        }
     },
-    computed: {
+});
 
-    }
+
+new Vue({
+    el: '#vue-app-one'
+});
+
+
+new Vue({
+    el: '#vue-app-two'
 });
