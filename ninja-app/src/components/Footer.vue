@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>{{ copyright }}</p>
+        <p v-on:click="changeCopyright">Copyright 2023 {{ title }}</p>
     </footer>
 </template>
 
@@ -8,9 +8,20 @@
 
 export default {
     name: 'app-footer',
+    props: {
+        title: {
+            type: String, 
+            required: true
+        }
+    },
     data() {
         return {
-            copyright: 'Copyright 2023 Melon'
+            
+        }
+    },
+    methods: {
+        changeCopyright: function() {
+            this.$emit('changeTitle', 'Vue mmmelon');
         }
     }
 }

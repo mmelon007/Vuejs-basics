@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-header v-bind:title="title"></app-header>
     <ninja-content v-bind:ninjas_prop="ninjas"></ninja-content>
-    <app-footer></app-footer>
+    <app-footer v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-footer>
   </div>
 </template>
 
@@ -23,13 +23,19 @@ export default {
               {name: 'Tango', speciality: 'Conditionals', show: false},
               {name: 'Kami', speciality: 'Webpack', show: false},
               {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-          ]
+          ],
+      title: 'MMMMelon'
     }
   },
   components: {
     'app-header' : Header,
     'ninja-content' : Ninja,
     'app-footer': Footer
+  },
+  methods: {
+    updateTitle: function(updatedTitle) {
+      this.title = updatedTitle;
+    }
   }
 
 }
