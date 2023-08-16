@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header v-bind:title="title"></app-header>
+    <app-header v-bind:title_prop="title"></app-header>
     <ninja-content v-bind:ninjas_prop="ninjas"></ninja-content>
-    <app-footer v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-footer>
+    <app-footer v-bind:title_prop="title"></app-footer>
   </div>
 </template>
 

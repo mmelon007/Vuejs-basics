@@ -5,24 +5,35 @@
 </template>
 
 <script>
+import { bus } from '../main'
 
 export default {
     name: 'app-footer',
     props: {
-        title: {
+        title_prop: {
             type: String, 
             required: true
         }
     },
     data() {
         return {
-            
+            title: this.title_prop
         }
+    },    
+    computed: {
+
     },
     methods: {
         changeCopyright: function() {
-            this.$emit('changeTitle', 'Vue mmmelon');
+            // this.$emit('changeTitle', 'Vue mmmelon');
+            this.title = 'Vue mmmelon from footer';
+            bus.$emit('titleChanged', 'Vue mmmelon from footer');
         }
+    },
+    created() {
+        bus.$on('titleChanged', (data) => {
+            this.title = data;
+        });
     }
 }
 </script>
