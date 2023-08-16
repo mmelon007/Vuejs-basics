@@ -17,6 +17,9 @@
         <label>Az</label>
         <input type="checkbox" value="Az" v-model="blog.categories" />
       </div>
+      <select v-model="blog.author">
+        <option v-for="(author, index) in authors" :key="index">{{ author }}</option>
+      </select>
     </form>
     <div id="preview">
       <h3>preview blog</h3>
@@ -29,6 +32,7 @@
           {{ category }}
         </li>
       </ul>
+      <p>Author: {{ blog.author }}</p>
     </div>
   </div>
 </template>
@@ -42,7 +46,9 @@ export default {
         title: "",
         content: "",
         categories: [],
+        author: ""
       },
+      authors: ["Ap Roll", "Melon", "Savior"]
     };
   },
   components: {},
