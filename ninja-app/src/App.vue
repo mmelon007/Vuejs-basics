@@ -3,8 +3,17 @@
     <app-header v-bind:title_prop="title"></app-header>
     <ninja-content v-bind:ninjas_prop="ninjas"></ninja-content>
     <form-helper>
-      <h2 slot="title">{{ slot_title }}</h2>
-      <p slot="text">para text for slot</p>
+      <div slot="form-header">
+        <h3>This is the title of a form</h3>
+        <p>This is some info about the form</p>
+      </div>
+      <div slot="form-fields">
+        <input type="text" placeholder="name" required />
+        <input type="password" placeholder="password" required />
+      </div>
+      <div slot="form-controls">
+        <button v-on:click="handleSubmit">Submit</button>
+      </div>
     </form-helper>
     <app-footer v-bind:title_prop="title"></app-footer>
   </div>
