@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>form helper in component</h1>
+    <h1>Please fill out our form...</h1>
         <form>
             <div id="form-header">
                 <slot name="form-header"></slot>
@@ -24,14 +24,24 @@
 </template>
 
 <script>
+// Imports
 
 export default {
-    name: 'formHelper',
-    
+    components: {
+
+    },
+    data () {
+        return {
+
+        }
+    },
+    methods: {
+
+    }
 }
 </script>
 
-<style>
+<style scoped>
 h1{
     text-align: center;
 }
