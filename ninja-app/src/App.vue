@@ -2,6 +2,10 @@
   <div>
     <app-header v-bind:title_prop="title"></app-header>
     <ninja-content v-bind:ninjas_prop="ninjas"></ninja-content>
+    <form-helper>
+      <h2 slot="title">{{ slot_title }}</h2>
+      <p slot="text">para text for slot</p>
+    </form-helper>
     <app-footer v-bind:title_prop="title"></app-footer>
   </div>
 </template>
@@ -10,6 +14,7 @@
 import Ninja from './components/Ninja.vue'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import formHelper from './components/formHelper.vue'
 
 
 export default {
@@ -24,13 +29,15 @@ export default {
               {name: 'Kami', speciality: 'Webpack', show: false},
               {name: 'Yoshi', speciality: 'Data Diggin', show: false}
           ],
-      title: 'MMMMelon'
+      title: 'MMMMelon',
+      slot_title: 'dynamic slot title'
     }
   },
   components: {
     'app-header' : Header,
     'ninja-content' : Ninja,
-    'app-footer': Footer
+    'app-footer': Footer,
+    'form-helper': formHelper
   },
   methods: {
     updateTitle: function(updatedTitle) {

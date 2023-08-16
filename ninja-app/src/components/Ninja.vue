@@ -30,24 +30,24 @@ export default {
         }
     },
     // lifecycle hooks
-    beforeCreate() {
-        alert("before create");
-    },
-    created() {
-        alert("created");
-    },
-    beforeMount() {
-        alert("before mount");
-    },
-    mountedount() {
-        alert("mounted");
-    },
-    beforeUpdate() {
-        alert("before update");
-    },
-    updated() {
-        alert("update");
-    }
+    // beforeCreate() {
+    //     alert("before create");
+    // },
+    // created() {
+    //     alert("created");
+    // },
+    // beforeMount() {
+    //     alert("before mount");
+    // },
+    // mountedount() {
+    //     alert("mounted");
+    // },
+    // beforeUpdate() {
+    //     alert("before update");
+    // },
+    // updated() {
+    //     alert("update");
+    // }
 }
 </script>
 
