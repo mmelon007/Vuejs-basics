@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-header></app-header>
-    <ninja-content v-bind:ninjas="ninjas"></ninja-content>
+    <ninja-content v-bind:ninjas_prop="ninjas"></ninja-content>
     <app-footer></app-footer>
   </div>
 </template>
