@@ -20,9 +20,9 @@
       <select v-model="blog.author">
         <option v-for="(author, index) in authors" :key="index">{{ author }}</option>
       </select>
+      <button v-on:click.prevent="post">Add Blog</button>
     </form>
     
-    <button v-on:click.prevent="post">Add Blog</button>
     
     <div v-if="submitted">
       <h3>Thanks!</h3>
