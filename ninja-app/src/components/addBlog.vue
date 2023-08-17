@@ -18,18 +18,19 @@
         <input type="checkbox" value="Az" v-model="blog.categories" />
       </div>
       <select v-model="blog.author">
-        <option v-for="(author, index) in authors" :key="index">{{ author }}</option>
+        <option v-for="(author, index) in authors" :key="index">
+          {{ author }}
+        </option>
       </select>
       <button v-on:click.prevent="post">Add Blog</button>
     </form>
-    
-    
+
     <div v-if="submitted">
       <h3>Thanks!</h3>
     </div>
 
     <hr />
-    
+
     <div id="preview">
       <h3>preview blog</h3>
       <p>blog title: {{ blog.title }}</p>
@@ -55,25 +56,26 @@ export default {
         title: "",
         content: "",
         categories: [],
-        author: ""
+        author: "",
       },
       authors: ["Ap Roll", "Melon", "Savior"],
-      submitted: false
+      submitted: false,
     };
   },
   components: {},
   methods: {
-    post: function() {
-      this.$http.post('https://jsonplaceholder.typicode.com/posts',{
-        title: this.blog.title,
-        body: this.blog.content,
-        userId: 1
-      }).then(function(data){
-        console.log(data);
-        this.submitted = true;
-      });
-    }
-
+    post: function () {
+      this.$http
+        .post("https://jsonplaceholder.typicode.com/posts", {
+          title: this.blog.title,
+          body: this.blog.content,
+          userId: 1,
+        })
+        .then(function (data) {
+          console.log(data);
+          this.submitted = true;
+        });
+    },
   },
 };
 </script>

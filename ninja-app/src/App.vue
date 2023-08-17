@@ -16,7 +16,7 @@ export default {
   },
   components: {
     "add-blog": addBlog,
-    "show-blogs": showBlogs
+    "show-blogs": showBlogs,
   },
   methods: {},
 };
