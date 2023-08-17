@@ -11,32 +11,16 @@
 
 <script>
 export default {
+  props: {
+    todos_prop: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
-      todos: [],
+      todos: this.todos_prop,
     };
-  },
-  created() {
-    this.updateTodos();
-  },
-  methods: {
-    updateTodos: function () {
-      this.$http
-        .get("https://vue-basic-64381-default-rtdb.firebaseio.com/todos.json")
-        .then(function (data) {
-          return data.json();
-        })
-        .then(function (data) {
-          let todoArray = [];
-          for (let key in data) {
-            if (!data[key].finished) {
-              data[key].id = key;
-              todoArray.push(data[key]);
-            }
-          }
-          this.todos = todoArray;
-        });
-    },
   },
 };
 </script>

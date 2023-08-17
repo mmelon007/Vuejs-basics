@@ -20,9 +20,10 @@ export default {
     },
     methods: {
         post: function() {
-            this.$http.post("https://vue-basic-64381-default-rtdb.firebaseio.com/todos.json",this.todo).then(function(data){
-                console.log(data);
+            this.$http.post("https://vue-basic-64381-default-rtdb.firebaseio.com/todos.json",this.todo).then(function(){
+                
             });
+            
         }
     }
 }

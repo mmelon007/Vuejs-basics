@@ -11,32 +11,16 @@
 
 <script>
 export default {
+  props: {
+    dones_prop: {
+      type: Array,
+      required: true,
+    },
+  },
   data() {
     return {
-      dones: [],
+      dones: this.dones_prop,
     };
-  },
-  created() {
-    this.updateDones();
-  },
-  methods: {
-    updateDones: function () {
-      this.$http
-        .get("https://vue-basic-64381-default-rtdb.firebaseio.com/todos.json")
-        .then(function (data) {
-          return data.json();
-        })
-        .then(function (data) {
-          let doneArray = [];
-          for (let key in data) {
-            if (data[key].finished) {
-              data[key].id = key;
-              doneArray.push(data[key]);
-            }
-          }
-          this.dones = doneArray;
-        });
-    },
   },
 };
 </script>
