@@ -4,6 +4,8 @@
     <ul>
       <li v-for="todo in todos" :key="todo.id">
         {{ todo.description }}
+        <label v-on:click="changeStarState(todo)">star</label>
+        <button v-if="!todo.star">delete</button>
       </li>
     </ul>
   </div>
@@ -14,6 +16,11 @@ export default {
   props: ["todos"],
   data() {
     return {};
+  },
+  methods: {
+    changeStarState: function (todo) {
+      todo.star = !todo.star;
+    },
   },
 };
 </script>

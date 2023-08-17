@@ -31,6 +31,7 @@ export default {
         )
         .then(function () {
           this.$emit("updateTodos");
+          this.todo.description = "";
         });
     },
   },
