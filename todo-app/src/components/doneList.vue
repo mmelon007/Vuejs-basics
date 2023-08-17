@@ -4,6 +4,7 @@
     <ul>
       <li v-for="done in dones" :key="done.id">
         {{ done.description }}
+        <label v-if="done.star">star</label>
       </li>
     </ul>
   </div>

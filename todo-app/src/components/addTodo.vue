@@ -5,14 +5,16 @@
         type="text"
         v-model="todo.description"
         placeholder="添加新的待办"
+        :disabled="isDisabled"
       />
-      <button v-on:click.prevent="post">+</button>
+      <button v-on:click.prevent="post" :disabled="isDisabled">+</button>
     </form>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["isDisabled"],
   data() {
     return {
       todo: {

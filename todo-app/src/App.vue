@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <todo-list :todos="todos"></todo-list>
+    <todo-list :todos="todos" @updateTodos="updateTodoItems()"></todo-list>
     <done-list :dones="dones"></done-list>
-    <add-todo @updateTodos="updateTodoItems()"></add-todo>
+    <add-todo
+      :isDisabled="isDisabled"
+      @updateTodos="updateTodoItems()"
+    ></add-todo>
   </div>
 </template>
 
@@ -48,6 +51,11 @@ export default {
           this.dones = doneArray;
           this.todos = todoArray;
         });
+    },
+  },
+  computed: {
+    isDisabled: function () {
+      return this.todos.length >= 10;
     },
   },
 };
