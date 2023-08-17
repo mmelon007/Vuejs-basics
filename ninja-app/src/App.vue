@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import appHeader from './components/appHeader.vue';
+import appHeader from "./components/appHeader.vue";
 
 export default {
   name: "App",
@@ -14,7 +14,7 @@ export default {
     return {};
   },
   components: {
-    "app-header": appHeader
+    "app-header": appHeader,
   },
   methods: {},
 };

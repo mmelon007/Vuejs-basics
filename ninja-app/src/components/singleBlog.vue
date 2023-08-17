@@ -1,7 +1,14 @@
 <template>
   <div id="single-blog">
     <h1>{{ blog.title }}</h1>
-    <article>{{ blog.body }}</article>
+    <article>{{ blog.content }}</article>
+    <p>Author: {{ blog.author }}</p>
+    <p>Categories:</p>
+    <ul>
+      <li v-for="(category, index) in blog.categories" :key="index">
+        {{ category }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -16,9 +23,16 @@ export default {
   },
   created() {
     this.$http
-      .get("http://jsonplaceholder.typicode.com/posts/" + this.id)
+      .get(
+        "https://vue-basic-64381-default-rtdb.firebaseio.com/posts/" +
+          this.id +
+          ".json"
+      )
       .then(function (data) {
-        this.blog = data.body;
+        return data.json();
+      })
+      .then(function (data) {
+        this.blog = data;
       });
   },
 };
@@ -28,5 +42,8 @@ export default {
 #single-blog {
   max-width: 960px;
   margin: 0 auto;
+  padding: 20px;
+  background: #eee;
+  border: 1px dotted #aaa;
 }
 </style>
