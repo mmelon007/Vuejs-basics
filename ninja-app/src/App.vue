@@ -1,17 +1,13 @@
 <template>
   <div>
-    <add-blog> </add-blog>
-
-    <show-blogs></show-blogs>
-
-    <blog-list></blog-list>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import addBlog from "./components/addBlog.vue";
-import showBlogs from "./components/showBlogs.vue";
-import blogList from "./components/blogList.vue";
+// import addBlog from "./components/addBlog.vue";
+// import showBlogs from "./components/showBlogs.vue";
+// import blogList from "./components/blogList.vue";
 
 export default {
   name: "App",
@@ -19,9 +15,9 @@ export default {
     return {};
   },
   components: {
-    "add-blog": addBlog,
-    "show-blogs": showBlogs,
-    "blog-list": blogList,
+    // "add-blog": addBlog,
+    // "show-blogs": showBlogs,
+    // "blog-list": blogList,
   },
   methods: {},
 };
