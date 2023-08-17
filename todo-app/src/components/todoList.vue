@@ -11,16 +11,9 @@
 
 <script>
 export default {
-  props: {
-    todos_prop: {
-      type: Array,
-      required: true,
-    },
-  },
+  props: ["todos"],
   data() {
-    return {
-      todos: this.todos_prop,
-    };
+    return {};
   },
 };
 </script>

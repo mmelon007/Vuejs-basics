@@ -1,34 +1,34 @@
 <template>
   <div id="app">
-    <todo-list v-bind:todos_prop="todos"></todo-list>
-    <done-list v-bind:dones_prop="dones"></done-list>
-    <add-todo></add-todo>
+    <todo-list :todos="todos"></todo-list>
+    <done-list :dones="dones"></done-list>
+    <add-todo @updateTodos="updateTodoItems()"></add-todo>
   </div>
 </template>
 
 <script>
 import todoList from "./components/todoList.vue";
 import doneList from "./components/doneList.vue";
-import addTodo from './components/addTodo';
+import addTodo from "./components/addTodo";
 
 export default {
   name: "App",
   components: {
     "todo-list": todoList,
     "done-list": doneList,
-    "add-todo": addTodo
+    "add-todo": addTodo,
   },
-  data (){
+  data() {
     return {
       todos: [],
-      dones: []
-    }
+      dones: [],
+    };
   },
   created() {
     this.updateTodoItems();
   },
   methods: {
-    updateTodoItems: function() {
+    updateTodoItems: function () {
       this.$http
         .get("https://vue-basic-64381-default-rtdb.firebaseio.com/todos.json")
         .then(function (data) {
@@ -48,8 +48,8 @@ export default {
           this.dones = doneArray;
           this.todos = todoArray;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

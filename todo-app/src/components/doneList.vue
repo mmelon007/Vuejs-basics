@@ -11,16 +11,9 @@
 
 <script>
 export default {
-  props: {
-    dones_prop: {
-      type: Array,
-      required: true,
-    },
-  },
+  props: ["dones"],
   data() {
-    return {
-      dones: this.dones_prop,
-    };
+    return {};
   },
 };
 </script>
