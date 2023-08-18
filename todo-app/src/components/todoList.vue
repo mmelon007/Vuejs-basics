@@ -4,11 +4,26 @@
       <label class="title">待办列表</label>
       <ul class="items-list">
         <li v-for="todo in todos" :key="todo.id">
-          <img  v-on:click.prevent="updateTodoState(todo)" src="../assets/icons/unfinished.png">
-          {{ todo.description }}
-            <img v-on:click="changeStarState(todo)" v-if="todo.star" src="../assets/icons/star_fill.png">
-            <img v-on:click="changeStarState(todo)" v-else src="../assets/icons/star.png">
-          <img class="delete-button" v-if="!todo.star" v-on:click.prevent="deleteTodo(todo.id)">
+          <img
+            v-on:click.prevent="updateTodoState(todo)"
+            src="../assets/icons/unfinished.png"
+          />
+          <p>{{ todo.description }}</p>
+          <img
+            v-on:click="changeStarState(todo)"
+            v-if="todo.star"
+            src="../assets/icons/star_fill.png"
+          />
+          <img
+            v-on:click="changeStarState(todo)"
+            v-else
+            src="../assets/icons/star.png"
+          />
+          <img
+            class="delete-button"
+            v-if="!todo.star"
+            v-on:click.prevent="deleteTodo(todo.id)"
+          />
         </li>
       </ul>
     </div>
@@ -16,9 +31,9 @@
       <label class="title">已办列表</label>
       <ul class="items-list done-list">
         <li v-for="done in dones" :key="done.id">
-          <img src="../assets/icons/finished.png">
-          {{ done.description }}
-            <img v-if="done.star" src="../assets/icons/star_fill.png">
+          <img src="../assets/icons/finished.png" />
+          <p>{{ done.description }}</p>
+          <img v-if="done.star" src="../assets/icons/star_fill.png" />
         </li>
       </ul>
     </div>
@@ -75,9 +90,11 @@ export default {
           this.$emit("updateTodos");
         });
     },
-    getImg: function(flag){
-      return flag ? '../assets/icons/finished.png' : '../assets/icons/unfinished.png';
-    }
+    getImg: function (flag) {
+      return flag
+        ? "../assets/icons/finished.png"
+        : "../assets/icons/unfinished.png";
+    },
   },
 };
 </script>
@@ -119,11 +136,16 @@ li {
   line-height: 7vh;
   letter-spacing: -0.03px;
   color: #4e5851;
-  
+
   display: grid;
   grid-template-columns: 24px calc(100vw - 142px) 24px 24px;
   column-gap: 12px;
   justify-content: left;
+}
+li p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 li img {
@@ -141,7 +163,7 @@ button {
 }
 
 .delete-button {
-  content: url('../assets/icons/delete.png');
+  content: url("../assets/icons/delete.png");
 }
 
 .done-list {
