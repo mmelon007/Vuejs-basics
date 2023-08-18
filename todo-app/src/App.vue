@@ -53,13 +53,13 @@ export default {
   },
   methods: {
     updateTodoItems: function () {
-      this.todoItems = [];
       this.$http
         .get("https://vue-basic-64381-default-rtdb.firebaseio.com/todos.json")
         .then(function (data) {
           return data.json();
         })
         .then(function (data) {
+          this.todoItems = [];
           for (let key in data) {
             data[key].id = key;
             this.todoItems.push(data[key]);
@@ -81,6 +81,6 @@ export default {
 
 <style>
 #app {
-  background: #EBEBE3;
+  background: #ebebe3;
 }
 </style>

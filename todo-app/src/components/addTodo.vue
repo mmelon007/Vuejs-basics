@@ -7,7 +7,11 @@
         placeholder="添加新的待办"
         :disabled="isDisabled"
       />
-      <img class="add-new-todo" v-on:click.prevent="post" :disabled="isDisabled">
+      <img
+        class="add-new-todo"
+        v-on:click.prevent="post"
+        :disabled="isDisabled"
+      />
     </form>
   </div>
 </template>
@@ -69,6 +73,6 @@ input {
   display: inline;
   width: 6vh;
   height: 6vh;
-  content: url('../assets/icons/add.png');
+  content: url("../assets/icons/add.png");
 }
 </style>
