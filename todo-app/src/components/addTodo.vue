@@ -7,7 +7,7 @@
         placeholder="添加新的待办"
         :disabled="isDisabled"
       />
-      <button v-on:click.prevent="post" :disabled="isDisabled">+</button>
+      <img class="add-new-todo" v-on:click.prevent="post" :disabled="isDisabled">
     </form>
   </div>
 </template>
@@ -40,4 +40,34 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#add-todo {
+  height: 10vh;
+}
+form {
+  margin: 2vh 15px;
+  height: 6vh;
+  display: grid;
+  grid-template-columns: 80% 10%;
+  column-gap: 5%;
+}
+input {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  font-family: Gen Jyuu Gothic;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 6vh;
+  letter-spacing: -0.03px;
+  color: #4e5851;
+  display: inline;
+}
+
+.add-new-todo {
+  display: inline;
+  width: 6vh;
+  height: 6vh;
+  content: url('../assets/icons/add.png');
+}
+</style>

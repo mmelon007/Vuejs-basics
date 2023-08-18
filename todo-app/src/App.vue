@@ -79,4 +79,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#app {
+  background: #EBEBE3;
+}
+</style>
