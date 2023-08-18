@@ -62,6 +62,7 @@ input {
   letter-spacing: -0.03px;
   color: #4e5851;
   display: inline;
+  padding-left: 10px;
 }
 
 .add-new-todo {
